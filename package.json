@@ -1,0 +1,17 @@
+{
+  "name": "birthday-pizza",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "node node_modules/typescript/bin/tsc index.ts",
+    "start": "node node_modules/serve/bin/serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^1.4.0",
+    "typescript": "^1.4.1"
+  }
+}
