@@ -72,14 +72,11 @@ function getSelectedDate() {
     return date;
 }
 function getUpcomingBirthdays(date) {
-    var birthdays = [];
-    planets.forEach(function (planet) {
-        birthdays.push(planet.getNextBirthday(date));
+    return planets.map(function (planet) {
+        return planet.getNextBirthday(date);
+    }).sort(function (birthday1, birthday2) {
+        return birthday1.date.getTime() - birthday2.date.getTime();
     });
-    birthdays.sort(function (a, b) {
-        return a.date.getTime() - b.date.getTime();
-    });
-    return birthdays;
 }
 $(function () {
     setInitialDate();
