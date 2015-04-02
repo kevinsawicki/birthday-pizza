@@ -7,6 +7,10 @@ body {
   font-family: 'Audiowide', sans-serif;
 }
 
+.intro-text {
+  font-size: 24px;
+}
+
 .form-control {
   background: #111;
   color: white;
