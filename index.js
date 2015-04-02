@@ -52,7 +52,7 @@ var Earth = (function (_super) {
     __extends(Earth, _super);
     function Earth() {
         _super.call(this, 'Earth', 365.256363004);
-        this.addMoon('Moon', 27.321582);
+        this.addMoon('Luna', 27.321582);
     }
     Earth.prototype.getAge = function (date) {
         var now = new Date();
@@ -104,11 +104,18 @@ function getSelectedDate() {
     return date;
 }
 function getUpcomingBirthdays(date) {
-    return planets.map(function (planet) {
-        return planet.getNextBirthday(date);
-    }).sort(function (birthday1, birthday2) {
+    var birthdays = [];
+    var addBirthday = function (orbiter) {
+        birthdays.push(orbiter.getNextBirthday(date));
+    };
+    planets.forEach(function (planet) {
+        addBirthday(planet);
+        planet.moons.forEach(addBirthday);
+    });
+    birthdays.sort(function (birthday1, birthday2) {
         return birthday1.date.getTime() - birthday2.date.getTime();
     });
+    return birthdays;
 }
 function updateLocationHash(date) {
     var month;

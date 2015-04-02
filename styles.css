@@ -15,11 +15,11 @@ body {
   margin-bottom: 20px;
 }
 
-.planet {
+.planet, .moon {
   min-height: 125px;
 }
 
-.planet-image {
+.planet-image, .moon-image {
   float: left;
   height: 125px;
   width: 125px;
@@ -56,4 +56,76 @@ body {
 
 .neptune .planet-image {
   background-image: url("./images/neptune.jpg");
+}
+
+.luna .moon-image {
+  background-image: url("./images/luna.jpg");
+}
+
+.deimos .moon-image {
+  background-image: url("./images/deimos.jpg");
+}
+
+.io .moon-image {
+  background-image: url("./images/io.jpg");
+}
+
+.europa .moon-image {
+  background-image: url("./images/europa.jpg");
+}
+
+.ganymede .moon-image {
+  background-image: url("./images/ganymede.jpg");
+}
+
+.callisto .moon-image {
+  background-image: url("./images/callisto.jpg");
+}
+
+.enceladus .moon-image {
+  background-image: url("./images/enceladus.jpg");
+}
+
+.tethys .moon-image {
+  background-image: url("./images/tethys.jpg");
+}
+
+.dione .moon-image {
+  background-image: url("./images/dione.jpg");
+}
+
+.rhea .moon-image {
+  background-image: url("./images/rhea.jpg");
+}
+
+.titan .moon-image {
+  background-image: url("./images/titan.jpg");
+}
+
+.iapetus .moon-image {
+  background-image: url("./images/iapetus.jpg");
+}
+
+.miranda .moon-image {
+  background-image: url("./images/miranda.jpg");
+}
+
+.ariel .moon-image {
+  background-image: url("./images/ariel.jpg");
+}
+
+.umbriel .moon-image {
+  background-image: url("./images/umbriel.jpg");
+}
+
+.titania .moon-image {
+  background-image: url("./images/titania.jpg");
+}
+
+.oberon .moon-image {
+  background-image: url("./images/oberon.jpg");
+}
+
+.triton .moon-image {
+  background-image: url("./images/triton.jpg");
 }

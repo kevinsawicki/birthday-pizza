@@ -58,7 +58,7 @@ class Moon extends Orbiter {
 class Earth extends Planet {
   constructor() {
     super('Earth', 365.256363004);
-    this.addMoon('Moon', 27.321582);
+    this.addMoon('Luna', 27.321582);
   }
 
   getAge(date: Date): number {
@@ -139,11 +139,22 @@ function getSelectedDate(): Date {
 }
 
 function getUpcomingBirthdays(date: Date): Birthday[] {
-  return planets.map(function(planet) {
-    return planet.getNextBirthday(date);
-  }).sort(function(birthday1, birthday2) {
+  var birthdays = [];
+
+  var addBirthday = function(orbiter: Orbiter) {
+    birthdays.push(orbiter.getNextBirthday(date));
+  }
+
+  planets.forEach(function(planet) {
+    addBirthday(planet);
+    planet.moons.forEach(addBirthday);
+  });
+
+  birthdays.sort(function(birthday1, birthday2) {
     return birthday1.date.getTime() - birthday2.date.getTime();
   });
+
+  return birthdays;
 }
 
 function updateLocationHash(date: Date): void {
