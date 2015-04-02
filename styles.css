@@ -21,6 +21,8 @@ body {
 .planet, .moon {
   min-height: 125px;
   margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 
 .planet-image, .moon-image {
@@ -33,6 +35,10 @@ body {
 
 .age, .birthday {
   font-size: 18px;
+}
+
+.birthday-today {
+  border-color: #666;
 }
 
 .mercury .planet-image {

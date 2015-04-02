@@ -29,6 +29,13 @@ class Birthday {
     this.date = date;
     this.age = age;
   }
+
+  isToday(): boolean {
+    var now = new Date();
+    return now.getFullYear() === this.date.getFullYear() &&
+      now.getDate() === this.date.getDate() &&
+      now.getMonth() === this.date.getMonth();
+  }
 }
 
 class Planet extends Orbiter {
@@ -77,7 +84,14 @@ class Earth extends Planet {
     var age = this.getAge(date);
     var birthday = new Date();
     birthday.setTime(date.getTime());
-    birthday.setFullYear(date.getFullYear() + age + 1);
+    birthday.setFullYear(date.getFullYear() + age);
+
+    var now = new Date();
+    if (now.getFullYear() !== birthday.getFullYear() ||
+      now.getDate() !== birthday.getDate() ||
+      now.getMonth() !== birthday.getMonth())
+      birthday.setFullYear(birthday.getFullYear() + 1)
+
     return new Birthday(this, birthday, age);
   }
 }
@@ -208,8 +222,15 @@ function updateBirthdays() {
   var date = getSelectedDate();
   updateLocationHash(date);
   getUpcomingBirthdays(date).forEach(function(birthday) {
-    $('.birthday-' + birthday.location.name.toLowerCase()).text(birthday.date.toLocaleDateString());
-    $('.age-' + birthday.location.name.toLowerCase()).text(birthday.age);
+    var name = birthday.location.name.toLowerCase();
+
+    $('.birthday-' + name).text(birthday.date.toLocaleDateString());
+    $('.age-' + name).text(birthday.age);
+
+    if (birthday.isToday())
+      $('.' + name).addClass('birthday-today');
+    else
+      $('.' + name).removeClass('birthday-today');
   });
 }
 
