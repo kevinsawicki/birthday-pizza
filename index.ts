@@ -15,17 +15,19 @@ class Orbiter {
   getNextBirthday(date: Date): Date {
     var age = this.getAge(date);
     var birthday = this.period * (age + 1);
-    return new Birthday(this, new Date(date.getTime() + birthday));
+    return new Birthday(this, new Date(date.getTime() + birthday), age);
   }
 }
 
 class Birthday {
   location: Orbiter;
   date: Date;
+  age: number;
 
-  constructor(location: Orbiter, date: Date) {
+  constructor(location: Orbiter, date: Date, age: number) {
     this.location = location;
     this.date = date;
+    this.age = age;
   }
 }
 
@@ -53,12 +55,38 @@ class Moon extends Orbiter {
   }
 }
 
+class Earth extends Planet {
+  constructor() {
+    super('Earth', 365.256363004);
+    this.addMoon('Moon', 27.321582);
+  }
+
+  getAge(date: Date): number {
+    var now = new Date()
+    var birthday = new Date();
+    birthday.setTime(date.getTime());
+    birthday.setFullYear(now.getFullYear());
+
+    var age = now.getFullYear() - date.getFullYear();
+    if (birthday.getTime() > now.getTime())
+      age--;
+    return age;
+  }
+
+  getNextBirthday(date: Date): Date {
+    var age = this.getAge(date);
+    var birthday = new Date();
+    birthday.setTime(date.getTime());
+    birthday.setFullYear(date.getFullYear() + age + 1);
+    return new Birthday(this, birthday, age);
+  }
+}
+
 var planets = [];
 
 planets.push(new Planet('Mercury', 87.9691));
 planets.push(new Planet('Venus',   224.701));
-planets.push(new Planet('Earth',   365.256363004)
-  .addMoon('Moon',      27.321582));
+planets.push(new Earth());
 planets.push(new Planet('Mars',    686.971)
   .addMoon('Phobos',    0.31891023)
   .addMoon('Deimos',    1.263));
@@ -113,10 +141,11 @@ function getUpcomingBirthdays(date: Date): Birthday[] {
 $(function() {
   setInitialDate();
 
-  $('.js-submit-button').on('click', function() {
+  $('select').on('change', function() {
     var date = getSelectedDate();
     getUpcomingBirthdays(date).forEach(function(birthday) {
-      console.log(birthday.location.name, birthday.date);
+      $('.birthday-' + birthday.location.name.toLowerCase()).text(birthday.date.toLocaleDateString());
+      $('.age-' + birthday.location.name.toLowerCase()).text(birthday.age);
     });
   });
 });

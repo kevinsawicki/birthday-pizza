@@ -1,0 +1,59 @@
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Audiowide', sans-serif;
+}
+
+.form-control {
+  background: #111;
+  color: white;
+  font-size: 32px;
+  height: 64px;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+.planet {
+  min-height: 125px;
+}
+
+.planet-image {
+  float: left;
+  height: 125px;
+  width: 125px;
+  background-size: contain;
+}
+
+.mercury .planet-image {
+  background-image: url("./images/mercury.jpg");
+}
+
+.venus .planet-image {
+  background-image: url("./images/venus.jpg");
+}
+
+.earth .planet-image {
+  background-image: url("./images/earth.jpg");
+}
+
+.mars .planet-image {
+  background-image: url("./images/mars.jpg");
+}
+
+.jupiter .planet-image {
+  background-image: url("./images/jupiter.jpg");
+}
+
+.saturn .planet-image {
+  background-image: url("./images/saturn.jpg");
+}
+
+.uranus .planet-image {
+  background-image: url("./images/uranus.jpg");
+}
+
+.neptune .planet-image {
+  background-image: url("./images/neptune.jpg");
+}

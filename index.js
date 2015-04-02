@@ -16,14 +16,15 @@ var Orbiter = (function () {
     Orbiter.prototype.getNextBirthday = function (date) {
         var age = this.getAge(date);
         var birthday = this.period * (age + 1);
-        return new Birthday(this, new Date(date.getTime() + birthday));
+        return new Birthday(this, new Date(date.getTime() + birthday), age);
     };
     return Orbiter;
 })();
 var Birthday = (function () {
-    function Birthday(location, date) {
+    function Birthday(location, date, age) {
         this.location = location;
         this.date = date;
+        this.age = age;
     }
     return Birthday;
 })();
@@ -47,10 +48,35 @@ var Moon = (function (_super) {
     }
     return Moon;
 })(Orbiter);
+var Earth = (function (_super) {
+    __extends(Earth, _super);
+    function Earth() {
+        _super.call(this, 'Earth', 365.256363004);
+        this.addMoon('Moon', 27.321582);
+    }
+    Earth.prototype.getAge = function (date) {
+        var now = new Date();
+        var birthday = new Date();
+        birthday.setTime(date.getTime());
+        birthday.setFullYear(now.getFullYear());
+        var age = now.getFullYear() - date.getFullYear();
+        if (birthday.getTime() > now.getTime())
+            age--;
+        return age;
+    };
+    Earth.prototype.getNextBirthday = function (date) {
+        var age = this.getAge(date);
+        var birthday = new Date();
+        birthday.setTime(date.getTime());
+        birthday.setFullYear(date.getFullYear() + age + 1);
+        return new Birthday(this, birthday, age);
+    };
+    return Earth;
+})(Planet);
 var planets = [];
 planets.push(new Planet('Mercury', 87.9691));
 planets.push(new Planet('Venus', 224.701));
-planets.push(new Planet('Earth', 365.256363004).addMoon('Moon', 27.321582));
+planets.push(new Earth());
 planets.push(new Planet('Mars', 686.971).addMoon('Phobos', 0.31891023).addMoon('Deimos', 1.263));
 planets.push(new Planet('Jupiter', 4332.59).addMoon('Io', 1.7691).addMoon('Europa', 3.5512).addMoon('Ganymede', 7.1546).addMoon('Callisto', 16.689));
 planets.push(new Planet('Saturn', 10759.22).addMoon('Mimas', 0.942).addMoon('Enceladus', 1.370218).addMoon('Tethys', 1.887802).addMoon('Dione', 2.736915).addMoon('Rhea', 4.518212).addMoon('Titan', 15.945).addMoon('Iapetus', 79.3215));
@@ -61,7 +87,7 @@ function setInitialDate() {
     var now = new Date();
     $('.js-select-day').val(now.getDate());
     $('.js-select-month').val(now.getMonth());
-    $('.js-select-year').val(now.getFullYear() - 30);
+    $('.js-select-year').val(now.getFullYear() - 21);
 }
 function getSelectedDate() {
     var day = parseInt($('.js-select-day').val());
@@ -80,10 +106,11 @@ function getUpcomingBirthdays(date) {
 }
 $(function () {
     setInitialDate();
-    $('.js-submit-button').on('click', function () {
+    $('select').on('change', function () {
         var date = getSelectedDate();
         getUpcomingBirthdays(date).forEach(function (birthday) {
-            console.log(birthday.location.name, birthday.date);
+            $('.birthday-' + birthday.location.name.toLowerCase()).text(birthday.date.toLocaleDateString());
+            $('.age-' + birthday.location.name.toLowerCase()).text(birthday.age);
         });
     });
 });
