@@ -90,7 +90,7 @@ function setInitialDate(): void {
   var now = new Date();
   $('.js-select-day').val(now.getDate());
   $('.js-select-month').val(now.getMonth());
-  $('.js-select-year').val(now.getFullYear() - 30);
+  $('.js-select-year').val(now.getFullYear() - 21);
 }
 
 function getSelectedDate(): Date {
