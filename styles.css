@@ -31,6 +31,10 @@ body {
   margin-right: 15px;
 }
 
+.age, .birthday {
+  font-size: 18px;
+}
+
 .mercury .planet-image {
   background-image: url("./images/mercury.jpg");
 }
