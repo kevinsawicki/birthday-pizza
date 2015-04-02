@@ -84,10 +84,16 @@ planets.push(new Planet('Uranus', 30687.15).addMoon('Miranda', 1.413479).addMoon
 planets.push(new Planet('Neptune', 60190.03).addMoon('Triton', 5.876854));
 var $;
 function setInitialDate() {
-    var now = new Date();
-    $('.js-select-day').val(now.getDate());
-    $('.js-select-month').val(now.getMonth());
-    $('.js-select-year').val(now.getFullYear() - 21);
+    var initialDate = new Date();
+    initialDate.setFullYear(initialDate.getFullYear() - 21);
+    if (window.location.hash.length > 1) {
+        var hashDate = new Date(window.location.hash.substring(1));
+        if (!isNaN(hashDate.getTime()))
+            initialDate = hashDate;
+    }
+    $('.js-select-day').val(initialDate.getDate());
+    $('.js-select-month').val(initialDate.getMonth());
+    $('.js-select-year').val(initialDate.getFullYear());
 }
 function getSelectedDate() {
     var day = parseInt($('.js-select-day').val());
@@ -104,13 +110,61 @@ function getUpcomingBirthdays(date) {
         return birthday1.date.getTime() - birthday2.date.getTime();
     });
 }
+function updateLocationHash(date) {
+    var month;
+    switch (date.getMonth()) {
+        case 0:
+            month = 'january';
+            break;
+        case 1:
+            month = 'february';
+            break;
+        case 2:
+            month = 'march';
+            break;
+        case 3:
+            month = 'april';
+            break;
+        case 4:
+            month = 'may';
+            break;
+        case 5:
+            month = 'june';
+            break;
+        case 6:
+            month = 'july';
+            break;
+        case 7:
+            month = 'august';
+            break;
+        case 8:
+            month = 'september';
+            break;
+        case 9:
+            month = 'october';
+            break;
+        case 10:
+            month = 'november';
+            break;
+        case 11:
+            month = 'december';
+            break;
+    }
+    var day = date.getDate();
+    var year = date.getFullYear();
+    var hash = month + '-' + day + '-' + year;
+    window.location.hash = hash;
+}
+function updateBirthdays() {
+    var date = getSelectedDate();
+    updateLocationHash(date);
+    getUpcomingBirthdays(date).forEach(function (birthday) {
+        $('.birthday-' + birthday.location.name.toLowerCase()).text(birthday.date.toLocaleDateString());
+        $('.age-' + birthday.location.name.toLowerCase()).text(birthday.age);
+    });
+}
 $(function () {
     setInitialDate();
-    $('select').on('change', function () {
-        var date = getSelectedDate();
-        getUpcomingBirthdays(date).forEach(function (birthday) {
-            $('.birthday-' + birthday.location.name.toLowerCase()).text(birthday.date.toLocaleDateString());
-            $('.age-' + birthday.location.name.toLowerCase()).text(birthday.age);
-        });
-    });
+    updateBirthdays();
+    $('select').on('change', updateBirthdays);
 });
