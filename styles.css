@@ -13,9 +13,10 @@ body {
 
 .form-control {
   background: #111;
-  color: white;
+  color: #eee;
   font-size: 32px;
   height: 64px;
+  border-color: #eee;
 }
 
 .planet, .moon {
