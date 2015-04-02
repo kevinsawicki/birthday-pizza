@@ -18,12 +18,9 @@ body {
   height: 64px;
 }
 
-.row {
-  margin-bottom: 20px;
-}
-
 .planet, .moon {
   min-height: 125px;
+  margin-bottom: 20px;
 }
 
 .planet-image, .moon-image {
@@ -31,6 +28,7 @@ body {
   height: 125px;
   width: 125px;
   background-size: contain;
+  margin-right: 15px;
 }
 
 .mercury .planet-image {
