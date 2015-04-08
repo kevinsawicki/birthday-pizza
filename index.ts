@@ -89,8 +89,10 @@ class Earth extends Planet {
     var now = new Date();
     if (now.getFullYear() !== birthday.getFullYear() ||
       now.getDate() !== birthday.getDate() ||
-      now.getMonth() !== birthday.getMonth())
+      now.getMonth() !== birthday.getMonth()) {
       birthday.setFullYear(birthday.getFullYear() + 1)
+      age++;
+    }
 
     return new Birthday(this, birthday, age);
   }

@@ -74,8 +74,10 @@ var Earth = (function (_super) {
         birthday.setTime(date.getTime());
         birthday.setFullYear(date.getFullYear() + age);
         var now = new Date();
-        if (now.getFullYear() !== birthday.getFullYear() || now.getDate() !== birthday.getDate() || now.getMonth() !== birthday.getMonth())
+        if (now.getFullYear() !== birthday.getFullYear() || now.getDate() !== birthday.getDate() || now.getMonth() !== birthday.getMonth()) {
             birthday.setFullYear(birthday.getFullYear() + 1);
+            age++;
+        }
         return new Birthday(this, birthday, age);
     };
     return Earth;
