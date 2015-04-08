@@ -23,6 +23,10 @@ body {
   color: white;
 }
 
+.nav-icon:last-child {
+  margin-right: 15px;
+}
+
 .intro-text {
   font-size: 24px;
 }
@@ -50,7 +54,19 @@ body {
   margin-right: 15px;
 }
 
-.age, .birthday {
+.planet .planet-name, .moon .moon-name {
+  font-size: 16px;
+}
+
+.planet .planet-name, .moon .planet-name {
+  margin-bottom: 10px;
+}
+
+.age {
+  font-size: 24px;
+}
+
+.birthday {
   font-size: 18px;
 }
 

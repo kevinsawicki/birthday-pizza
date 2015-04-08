@@ -13,8 +13,8 @@ class Orbiter {
   }
 
   getNextBirthday(date: Date): Date {
-    var age = this.getAge(date);
-    var birthday = this.period * (age + 1);
+    var age = this.getAge(date) + 1;
+    var birthday = this.period * age;
     return new Birthday(this, new Date(date.getTime() + birthday), age);
   }
 }

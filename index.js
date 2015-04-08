@@ -14,8 +14,8 @@ var Orbiter = (function () {
         return Math.floor(time / this.period);
     };
     Orbiter.prototype.getNextBirthday = function (date) {
-        var age = this.getAge(date);
-        var birthday = this.period * (age + 1);
+        var age = this.getAge(date) + 1;
+        var birthday = this.period * age;
         return new Birthday(this, new Date(date.getTime() + birthday), age);
     };
     return Orbiter;
