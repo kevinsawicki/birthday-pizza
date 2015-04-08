@@ -40,18 +40,18 @@ body {
 }
 
 .planet, .moon {
-  min-height: 125px;
-  margin-bottom: 20px;
+  min-height: 100px;
+  margin-bottom: 40px;
   border: 1px solid transparent;
   border-radius: 4px;
 }
 
 .planet-image, .moon-image {
   float: left;
-  height: 125px;
-  width: 125px;
+  height: 100px;
+  width: 100px;
   background-size: contain;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 .planet .planet-name, .moon .moon-name {
