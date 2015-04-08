@@ -27,6 +27,10 @@ body {
   margin-right: 15px;
 }
 
+.intro {
+  padding-bottom: 10px;
+}
+
 .intro-text {
   font-size: 24px;
 }
