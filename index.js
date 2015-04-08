@@ -177,10 +177,7 @@ function updateBirthdays() {
     getUpcomingBirthdays(date).forEach(function (birthday) {
         var name = birthday.location.name.toLowerCase();
         $('.birthday-' + name).text(birthday.date.toLocaleDateString());
-        var age = birthday.age;
-        if (typeof age.toLocaleString === 'function')
-            age = age.toLocaleString();
-        $('.age-' + name).text(age);
+        $('.age-' + name).text(birthday.age.toLocaleString());
         if (birthday.isToday())
             $('.' + name).addClass('birthday-today');
         else
