@@ -230,7 +230,7 @@ function updateBirthdays() {
 
     var age = birthday.age;
     if (typeof age.toLocaleString === 'function')
-      age = age.toLocaleString()
+      age = age.toLocaleString();
     $('.age-' + name).text(age);
 
     if (birthday.isToday())
