@@ -11,7 +11,7 @@ body {
 
 .navbar {
   background: transparent;
-  border-color: #222;
+  border-color: #333;
 }
 
 .navbar-default .navbar-brand {
@@ -55,7 +55,7 @@ body {
 }
 
 .birthday-today {
-  border-color: #666;
+  border-color: #FF9966;
 }
 
 .mercury .planet-image {
