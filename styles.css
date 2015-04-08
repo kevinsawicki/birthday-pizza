@@ -8,6 +8,21 @@ body {
   font-family: 'Audiowide', sans-serif;
 }
 
+
+.navbar {
+  background: transparent;
+  border-color: #222;
+}
+
+.navbar-default .navbar-brand {
+  color: white;
+}
+
+.nav-icon {
+  margin: 10px;
+  color: white;
+}
+
 .intro-text {
   font-size: 24px;
 }
