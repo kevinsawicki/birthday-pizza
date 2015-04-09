@@ -31,6 +31,17 @@ body {
   padding-bottom: 10px;
 }
 
+.footer {
+  border-top: 1px solid #333;
+  padding-top: 25px;
+  margin-bottom: 25px;
+}
+
+a, a:hover, a:focus {
+  color: #eee;
+  text-decoration: none;
+}
+
 .intro-text {
   font-size: 24px;
   padding-left: 36px;
@@ -41,6 +52,10 @@ body {
   height: 36px;
   width: 36px;
   display: inline-block;
+}
+
+.brand-icon {
+  margin-right: 12px;
 }
 
 .header-text {
