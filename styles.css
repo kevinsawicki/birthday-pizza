@@ -33,40 +33,18 @@ body {
 
 .intro-text {
   font-size: 24px;
+  padding-left: 36px;
+}
+
+.intro-text .intro-icon {
+  margin-left: -36px;
+  height: 36px;
+  width: 36px;
+  display: inline-block;
 }
 
 .header-text {
   font-size: 36px;
-}
-
-.intro-birthday:before {
-  margin-right: 15px;
-  content: "\f0ac";
-  font-family: "FontAwesome";
-  display: inline-block;
-  font-size: 1em;
-  height: 1em;
-  width: 1em;
-}
-
-.intro-next-birthday:before {
-  margin-right: 15px;
-  content: "\f1fd";
-  font-family: "FontAwesome";
-  display: inline-block;
-  font-size: 1em;
-  height: 1em;
-  width: 1em;
-}
-
-.intro-pizza:before {
-  margin-right: 15px;
-  content: "\f0f5";
-  font-family: "FontAwesome";
-  display: inline-block;
-  font-size: 1em;
-  height: 1em;
-  width: 1em;
 }
 
 .form-control {
