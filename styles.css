@@ -108,11 +108,14 @@ a, a:hover, a:focus {
   font-size: 18px;
 }
 
+.birthday-today {
+  color: #FFFF4D;
+}
+
 .birthday-today:after {
   padding-left: 10px;
   content: "\f1fd";
   font-family: "FontAwesome";
-  color: #E0B0FF;
   display: inline-block;
   font-size: 1em;
   height: 1em;
