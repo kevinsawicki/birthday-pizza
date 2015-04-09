@@ -35,6 +35,10 @@ body {
   font-size: 24px;
 }
 
+.header-text {
+  font-size: 36px;
+}
+
 .intro-birthday:before {
   padding-right: 15px;
   content: "\f0ac";
