@@ -172,7 +172,8 @@ function getUpcomingBirthdays(date) {
     });
     return birthdays;
 }
-function updateLocationHash(date) {
+function updateLocationHash() {
+    var date = getSelectedDate();
     var month;
     switch (date.getMonth()) {
         case 0:
@@ -219,7 +220,6 @@ function updateLocationHash(date) {
 }
 function updateBirthdays() {
     var date = getSelectedDate();
-    updateLocationHash(date);
     getUpcomingBirthdays(date).forEach(function (birthday) {
         var name = birthday.location.name.toLowerCase();
         $('.age-' + name).text(birthday.age.toLocaleString());
@@ -236,5 +236,8 @@ function updateBirthdays() {
 $(function () {
     setInitialDate();
     updateBirthdays();
-    $('select').on('change', updateBirthdays);
+    $('select').on('change', function () {
+        updateLocationHash();
+        updateBirthdays();
+    });
 });
