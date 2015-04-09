@@ -112,16 +112,6 @@ a, a:hover, a:focus {
   color: #FFFF66;
 }
 
-.birthday-today:after {
-  padding-left: 10px;
-  content: "\f1fd";
-  font-family: "FontAwesome";
-  display: inline-block;
-  font-size: 1em;
-  height: 1em;
-  width: 1em;
-}
-
 .mercury .planet-image {
   background-image: url("./images/mercury.jpg");
 }
