@@ -146,7 +146,8 @@ function setInitialDate() {
     var initialDate = new Date();
     initialDate.setFullYear(initialDate.getFullYear() - 18);
     if (window.location.hash.length > 1) {
-        var hashDate = new Date(window.location.hash.substring(1));
+        var hash = window.location.hash.substring(1).replace(/-/g, ' ');
+        var hashDate = new Date(hash);
         if (!isNaN(hashDate.getTime()))
             initialDate = hashDate;
     }
