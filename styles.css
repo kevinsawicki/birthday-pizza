@@ -11,6 +11,9 @@ body {
 .navbar {
   background: transparent;
   border-color: #333;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
 }
 
 .navbar-default .navbar-brand, .navbar-default .navbar-brand:hover {
