@@ -110,6 +110,11 @@ body {
   content: "\f1fd";
   font-family: "FontAwesome";
   color: #E0B0FF;
+  width: 1em;
+  display: inline-block;
+  font-size: 1em;
+  height: 1em;
+  width: 1em;
 }
 
 .mercury .planet-image {
