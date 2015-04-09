@@ -36,6 +36,50 @@ class Birthday {
       now.getDate() === this.date.getDate() &&
       now.getMonth() === this.date.getMonth();
   }
+
+  toDateString(): string {
+    var month;
+    switch (this.date.getMonth()) {
+      case 0:
+        month = 'jan';
+        break;
+      case 1:
+        month = 'feb';
+        break;
+      case 2:
+        month = 'mar';
+        break;
+      case 3:
+        month = 'apr';
+        break;
+      case 4:
+        month = 'may';
+        break;
+      case 5:
+        month = 'june';
+        break;
+      case 6:
+        month = 'july';
+        break;
+      case 7:
+        month = 'aug';
+        break;
+      case 8:
+        month = 'sept';
+        break;
+      case 9:
+        month = 'oct';
+        break;
+      case 10:
+        month = 'nov';
+        break;
+      case 11:
+        month = 'dec';
+        break;
+    }
+
+    return month + ' ' + this.date.getDate() + ', ' + this.date.getFullYear();
+  }
 }
 
 class Planet extends Orbiter {
@@ -240,7 +284,7 @@ function updateBirthdays() {
       $('.birthday-' + name).text('today!');
     } else {
       $('.birthday-' + name).removeClass('birthday-today');
-      $('.birthday-' + name).text(birthday.date.toLocaleDateString());
+      $('.birthday-' + name).text(birthday.toDateString());
     }
   });
 }
