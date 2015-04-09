@@ -86,8 +86,11 @@ body {
   font-size: 18px;
 }
 
-.birthday-today {
-  border-color: #FF9966;
+.birthday-today:after {
+  padding-left: 10px;
+  content: "\f1fd";
+  font-family: "FontAwesome";
+  color: #E0B0FF;
 }
 
 .mercury .planet-image {

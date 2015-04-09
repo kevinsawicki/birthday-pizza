@@ -180,12 +180,15 @@ function updateBirthdays() {
     updateLocationHash(date);
     getUpcomingBirthdays(date).forEach(function (birthday) {
         var name = birthday.location.name.toLowerCase();
-        $('.birthday-' + name).text(birthday.date.toLocaleDateString());
         $('.age-' + name).text(birthday.age.toLocaleString());
-        if (birthday.isToday())
-            $('.' + name).addClass('birthday-today');
-        else
-            $('.' + name).removeClass('birthday-today');
+        if (birthday.isToday()) {
+            $('.birthday-' + name).addClass('birthday-today');
+            $('.birthday-' + name).text('today!');
+        }
+        else {
+            $('.birthday-' + name).removeClass('birthday-today');
+            $('.birthday-' + name).text(birthday.date.toLocaleDateString());
+        }
     });
 }
 $(function () {
