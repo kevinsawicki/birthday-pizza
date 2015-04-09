@@ -82,6 +82,7 @@ class Earth extends Planet {
 
   getNextBirthday(date: Date): Date {
     var age = this.getAge(date);
+
     var birthday = new Date();
     birthday.setTime(date.getTime());
     birthday.setFullYear(date.getFullYear() + age);
@@ -149,8 +150,14 @@ function getSelectedDate(): Date {
   var day   = parseInt($('.js-select-day').val());
   var month = parseInt($('.js-select-month').val());
   var year  = parseInt($('.js-select-year').val());
+
   var date = new Date();
   date.setFullYear(year, month, day);
+  date.setHours(0);
+  date.setMinutes(0);
+  date.setSeconds(0);
+  date.setMilliseconds(0);
+
   return date;
 }
 

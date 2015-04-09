@@ -110,6 +110,10 @@ function getSelectedDate() {
     var year = parseInt($('.js-select-year').val());
     var date = new Date();
     date.setFullYear(year, month, day);
+    date.setHours(0);
+    date.setMinutes(0);
+    date.setSeconds(0);
+    date.setMilliseconds(0);
     return date;
 }
 function getUpcomingBirthdays(date) {
