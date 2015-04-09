@@ -8,7 +8,6 @@ body {
   font-family: 'Audiowide', sans-serif;
 }
 
-
 .navbar {
   background: transparent;
   border-color: #333;
@@ -37,11 +36,22 @@ body {
 }
 
 .form-control {
-  background: #111;
-  color: #eee;
+  background: #000;
+  color: #FF9966;
   font-size: 32px;
   height: 64px;
-  border-color: #eee;
+  border-color: #FF9966;
+  border-width: 0 0 1px 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.form-control:focus {
+  border-color: #66afe9;
+  color: #66afe9;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .planet, .moon {
