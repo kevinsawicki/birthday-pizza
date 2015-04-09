@@ -38,6 +38,7 @@ body {
   border-top: 1px solid #333;
   padding-top: 25px;
   margin-bottom: 25px;
+  font-size: 18px;
 }
 
 a, a:hover, a:focus {
