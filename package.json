@@ -1,13 +1,10 @@
 {
   "name": "birthday-pizza",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node ./server.js"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "serve": "^1.4.0",
     "typescript": "^1.4.1"
