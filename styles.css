@@ -35,6 +35,24 @@ body {
   font-size: 24px;
 }
 
+.intro-birthday:before {
+  padding-right: 15px;
+  content: "\f0ac";
+  font-family: "FontAwesome";
+}
+
+.intro-next-birthday:before {
+  padding-right: 15px;
+  content: "\f1fd";
+  font-family: "FontAwesome";
+}
+
+.intro-pizza:before {
+  padding-right: 15px;
+  content: "\f0f5";
+  font-family: "FontAwesome";
+}
+
 .form-control {
   background: #000;
   color: #eee;
