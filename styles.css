@@ -40,21 +40,33 @@ body {
 }
 
 .intro-birthday:before {
-  padding-right: 15px;
+  margin-right: 15px;
   content: "\f0ac";
   font-family: "FontAwesome";
+  display: inline-block;
+  font-size: 1em;
+  height: 1em;
+  width: 1em;
 }
 
 .intro-next-birthday:before {
-  padding-right: 15px;
+  margin-right: 15px;
   content: "\f1fd";
   font-family: "FontAwesome";
+  display: inline-block;
+  font-size: 1em;
+  height: 1em;
+  width: 1em;
 }
 
 .intro-pizza:before {
-  padding-right: 15px;
+  margin-right: 15px;
   content: "\f0f5";
   font-family: "FontAwesome";
+  display: inline-block;
+  font-size: 1em;
+  height: 1em;
+  width: 1em;
 }
 
 .form-control {
@@ -114,7 +126,6 @@ body {
   content: "\f1fd";
   font-family: "FontAwesome";
   color: #E0B0FF;
-  width: 1em;
   display: inline-block;
   font-size: 1em;
   height: 1em;
