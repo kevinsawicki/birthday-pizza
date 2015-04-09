@@ -61,8 +61,6 @@ body {
   min-height: 100px;
   margin-bottom: 40px;
   padding: 5px;
-  border: 1px solid transparent;
-  border-radius: 4px;
 }
 
 .planet-image, .moon-image {
