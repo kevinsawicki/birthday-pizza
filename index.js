@@ -136,7 +136,7 @@ planets.push(new Planet('Neptune', 60190.03).addMoon('Triton', 5.876854));
 var $;
 function setInitialDate() {
     var initialDate = new Date();
-    initialDate.setFullYear(initialDate.getFullYear() - 21);
+    initialDate.setFullYear(initialDate.getFullYear() - 18);
     if (window.location.hash.length > 1) {
         var hashDate = new Date(window.location.hash.substring(1));
         if (!isNaN(hashDate.getTime()))

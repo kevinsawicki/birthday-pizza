@@ -177,7 +177,7 @@ var $: any;
 
 function setInitialDate(): void {
   var initialDate = new Date();
-  initialDate.setFullYear(initialDate.getFullYear() - 21);
+  initialDate.setFullYear(initialDate.getFullYear() - 18);
 
   if (window.location.hash.length > 1) {
     var hashDate = new Date(window.location.hash.substring(1));
