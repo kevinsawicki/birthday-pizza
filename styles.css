@@ -14,13 +14,14 @@ body {
   border-color: #333;
 }
 
-.navbar-default .navbar-brand {
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover {
   color: white;
 }
 
-.nav-icon {
+.nav-icon, .nav-icon:hover {
   margin: 10px;
   color: white;
+  text-decoration: none;
 }
 
 .nav-icon:last-child {
