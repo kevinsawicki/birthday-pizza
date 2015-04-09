@@ -20,16 +20,6 @@ body {
   color: white;
 }
 
-.nav-icon, .nav-icon:hover {
-  margin: 10px;
-  color: white;
-  text-decoration: none;
-}
-
-.nav-icon:last-child {
-  margin-right: 15px;
-}
-
 .intro {
   padding-bottom: 10px;
 }
@@ -69,7 +59,7 @@ a, a:hover, a:focus {
 .form-control {
   background: #000;
   color: #eee;
-  font-size: 32px;
+  font-size: 36px;
   height: 64px;
   border-color: #ccc;
   border-width: 0 0 1px 0;
@@ -111,7 +101,7 @@ a, a:hover, a:focus {
 }
 
 .age {
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .birthday {
