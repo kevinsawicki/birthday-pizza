@@ -37,19 +37,22 @@ body {
 
 .form-control {
   background: #000;
-  color: #FF9966;
+  color: #eee;
   font-size: 32px;
   height: 64px;
-  border-color: #FF9966;
+  border-color: #ccc;
   border-width: 0 0 1px 0;
   border-radius: 0;
+  border-style: dashed;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   cursor: pointer;
 }
 
 .form-control:focus {
   border-color: #66afe9;
-  color: #66afe9;
+  color: #eee;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
