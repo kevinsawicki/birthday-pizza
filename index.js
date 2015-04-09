@@ -30,6 +30,14 @@ var Birthday = (function () {
         var now = new Date();
         return now.getFullYear() === this.date.getFullYear() && now.getDate() === this.date.getDate() && now.getMonth() === this.date.getMonth();
     };
+    Birthday.prototype.toAgeString = function () {
+        return this.age.toString().split('').reverse().map(function (number, index) {
+            if (index > 0 && index % 3 === 0)
+                return number + ',';
+            else
+                return number;
+        }).reverse().join('');
+    };
     Birthday.prototype.toDateString = function () {
         var month;
         switch (this.date.getMonth()) {
@@ -222,7 +230,7 @@ function updateBirthdays() {
     var date = getSelectedDate();
     getUpcomingBirthdays(date).forEach(function (birthday) {
         var name = birthday.location.name.toLowerCase();
-        $('.age-' + name).text(birthday.age.toLocaleString());
+        $('.age-' + name).text(birthday.toAgeString());
         if (birthday.isToday()) {
             $('.birthday-' + name).addClass('birthday-today');
             $('.birthday-' + name).text('today!');

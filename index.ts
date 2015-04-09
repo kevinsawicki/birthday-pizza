@@ -37,6 +37,15 @@ class Birthday {
       now.getMonth() === this.date.getMonth();
   }
 
+  toAgeString(): string {
+    return this.age.toString().split('').reverse().map(function(number, index) {
+      if (index > 0 && index % 3 === 0)
+        return number + ',';
+      else
+        return number;
+    }).reverse().join('');
+  }
+
   toDateString(): string {
     var month;
     switch (this.date.getMonth()) {
@@ -278,7 +287,7 @@ function updateBirthdays() {
   getUpcomingBirthdays(date).forEach(function(birthday) {
     var name = birthday.location.name.toLowerCase();
 
-    $('.age-' + name).text(birthday.age.toLocaleString());
+    $('.age-' + name).text(birthday.toAgeString());
 
     if (birthday.isToday()) {
       $('.birthday-' + name).addClass('birthday-today');
