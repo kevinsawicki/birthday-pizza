@@ -234,7 +234,7 @@ function updateBirthdays() {
         $('.age-' + name).text(birthday.toAgeString());
         if (birthday.isToday()) {
             $('.birthday-' + name).addClass('birthday-today');
-            $('.birthday-' + name).text('today!');
+            $('.birthday-' + name).text('TODAY!');
         }
         else {
             $('.birthday-' + name).removeClass('birthday-today');
