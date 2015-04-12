@@ -31,10 +31,19 @@ class Birthday {
   }
 
   isToday(): boolean {
-    var now = new Date();
-    return now.getFullYear() === this.date.getFullYear() &&
-      now.getDate() === this.date.getDate() &&
-      now.getMonth() === this.date.getMonth();
+    var today = new Date();
+    return today.getFullYear() === this.date.getFullYear() &&
+      today.getDate() === this.date.getDate() &&
+      today.getMonth() === this.date.getMonth();
+  }
+
+  isTomorrow(): boolean {
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    return tomorrow.getFullYear() === this.date.getFullYear() &&
+      tomorrow.getDate() === this.date.getDate() &&
+      tomorrow.getMonth() === this.date.getMonth();
   }
 
   toAgeString(): string {
@@ -289,14 +298,18 @@ function updateBirthdays(): void {
     var name = birthday.location.name.toLowerCase();
 
     $('.age-' + name).text(birthday.toAgeString());
+    $('.age-' + name).removeClass('birthday-today birthday-tomorrow');
+    $('.birthday-' + name).removeClass('birthday-today birthday-tomorrow');
 
     if (birthday.isToday()) {
       $('.age-' + name).addClass('birthday-today');
       $('.birthday-' + name).addClass('birthday-today');
       $('.birthday-' + name).text('TODAY!');
+    } else if (birthday.isTomorrow()) {
+      $('.age-' + name).addClass('birthday-tomorrow');
+      $('.birthday-' + name).addClass('birthday-tomorrow');
+      $('.birthday-' + name).text('tomorrow');
     } else {
-      $('.age-' + name).removeClass('birthday-today');
-      $('.birthday-' + name).removeClass('birthday-today');
       $('.birthday-' + name).text(birthday.toDateString());
     }
   });

@@ -112,6 +112,10 @@ a, a:hover, a:focus {
   color: #FFFF66;
 }
 
+.birthday-tomorrow {
+  color: #A6FFFF;
+}
+
 .mercury .planet-image {
   background-image: url("./images/mercury.jpg");
 }
