@@ -233,10 +233,12 @@ function updateBirthdays() {
         var name = birthday.location.name.toLowerCase();
         $('.age-' + name).text(birthday.toAgeString());
         if (birthday.isToday()) {
+            $('.age-' + name).addClass('birthday-today');
             $('.birthday-' + name).addClass('birthday-today');
             $('.birthday-' + name).text('TODAY!');
         }
         else {
+            $('.age-' + name).removeClass('birthday-today');
             $('.birthday-' + name).removeClass('birthday-today');
             $('.birthday-' + name).text(birthday.toDateString());
         }
