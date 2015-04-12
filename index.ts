@@ -12,7 +12,7 @@ class Orbiter {
     return Math.floor(time / this.period);
   }
 
-  getNextBirthday(date: Date): Date {
+  getNextBirthday(date: Date): Birthday {
     var age = this.getAge(date) + 1;
     var birthday = this.period * age;
     return new Birthday(this, new Date(date.getTime() + birthday), age);
@@ -133,7 +133,7 @@ class Earth extends Planet {
     return age;
   }
 
-  getNextBirthday(date: Date): Date {
+  getNextBirthday(date: Date): Birthday {
     var age = this.getAge(date);
 
     var birthday = new Date();
