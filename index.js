@@ -242,10 +242,41 @@ function updateBirthdays() {
         }
     });
 }
+function updateAvailableDays() {
+    var day = parseInt($('.js-select-day').val());
+    var month = parseInt($('.js-select-month').val());
+    var year = parseInt($('.js-select-year').val());
+    var leap = year % 4 === 0;
+    $('.js-day').prop('disabled', false);
+    switch (month) {
+        case 1:
+            if (leap) {
+                $('.js-day-30, .js-day-31').prop('disabled', true);
+                if (day > 29)
+                    $('.js-select-day').val(29);
+            }
+            else {
+                $('.js-day-29, .js-day-30, .js-day-31').prop('disabled', true);
+                if (day > 28)
+                    $('.js-select-day').val(28);
+            }
+            break;
+        case 3:
+        case 5:
+        case 8:
+        case 10:
+            $('.js-day-31').prop('disabled', true);
+            if (day > 30)
+                $('.js-select-day').val(30);
+            break;
+    }
+}
 $(function () {
     setInitialDate();
+    updateAvailableDays();
     updateBirthdays();
     $('select').on('change', function () {
+        updateAvailableDays();
         updateLocationHash();
         updateBirthdays();
     });
