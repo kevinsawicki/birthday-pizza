@@ -1,4 +1,4 @@
-# birthday.pizza
+# :birthday: :pizza: birthday.pizza :birthday: :pizza:
 
 The code for http://birthday.pizza
 
