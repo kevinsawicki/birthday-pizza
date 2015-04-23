@@ -62,16 +62,16 @@ a, a:hover, a:focus {
   font-size: 36px;
   height: 64px;
   border-color: #ccc;
-  border-width: 0 0 1px 0;
-  border-radius: 0;
-  border-style: dashed;
+  border-width: 1px;
+  border-radius: 4;
+  border-style: solid;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   cursor: pointer;
 }
 
-.form-control:focus {
+.form-control:focus, .form-control:hover {
   border-color: #66afe9;
   color: #eee;
   -webkit-box-shadow: none;
