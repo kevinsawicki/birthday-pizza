@@ -1,5 +1,7 @@
 # :birthday: :pizza: birthday.pizza :birthday: :pizza:
 
+[![Build Status](https://travis-ci.org/kevinsawicki/birthday-pizza.svg?branch=gh-pages)](https://travis-ci.org/kevinsawicki/birthday-pizza)
+
 The code for http://birthday.pizza
 
 To run locally:

@@ -190,6 +190,8 @@ planets.push(new Planet('Uranus',  30687.15)
   .addMoon('Oberon',    13.463234));
 planets.push(new Planet('Neptune', 60190.03)
   .addMoon('Triton',    5.876854));
+planets.push(new Planet('Pluto', 90465)
+  .addMoon('Charon',    6.3872304));
 
 var $: any;
 
