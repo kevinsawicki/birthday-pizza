@@ -148,6 +148,10 @@ a, a:hover, a:focus {
   background-image: url("./images/neptune.jpg");
 }
 
+.pluto .planet-image {
+  background-image: url("./images/pluto.jpg");
+}
+
 .luna .moon-image {
   background-image: url("./images/luna.jpg");
 }
@@ -218,4 +222,8 @@ a, a:hover, a:focus {
 
 .triton .moon-image {
   background-image: url("./images/triton.jpg");
+}
+
+.charon .moon-image {
+  background-image: url("./images/charon.png");
 }
