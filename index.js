@@ -146,6 +146,7 @@ planets.push(new Planet('Jupiter', 4332.59).addMoon('Io', 1.7691).addMoon('Europ
 planets.push(new Planet('Saturn', 10759.22).addMoon('Mimas', 0.942).addMoon('Enceladus', 1.370218).addMoon('Tethys', 1.887802).addMoon('Dione', 2.736915).addMoon('Rhea', 4.518212).addMoon('Titan', 15.945).addMoon('Iapetus', 79.3215));
 planets.push(new Planet('Uranus', 30687.15).addMoon('Miranda', 1.413479).addMoon('Ariel', 2.52).addMoon('Umbriel', 4.144).addMoon('Titania', 8.706234).addMoon('Oberon', 13.463234));
 planets.push(new Planet('Neptune', 60190.03).addMoon('Triton', 5.876854));
+planets.push(new Planet('Pluto', 90465).addMoon('Charon', 6.3872304));
 var $;
 function setInitialDate() {
     var initialDate = new Date();
