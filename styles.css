@@ -8,6 +8,10 @@ body {
   font-family: 'Audiowide', sans-serif;
 }
 
+.header {
+  margin-bottom: 25px;
+}
+
 .navbar {
   background: transparent;
   border-color: #333;
