@@ -1,4 +1,4 @@
-var __extends = this.__extends || function (d, b) {
+var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
@@ -28,12 +28,16 @@ var Birthday = (function () {
     }
     Birthday.prototype.isToday = function () {
         var today = new Date();
-        return today.getFullYear() === this.date.getFullYear() && today.getDate() === this.date.getDate() && today.getMonth() === this.date.getMonth();
+        return today.getFullYear() === this.date.getFullYear() &&
+            today.getDate() === this.date.getDate() &&
+            today.getMonth() === this.date.getMonth();
     };
     Birthday.prototype.isTomorrow = function () {
         var tomorrow = new Date();
         tomorrow.setDate(tomorrow.getDate() + 1);
-        return tomorrow.getFullYear() === this.date.getFullYear() && tomorrow.getDate() === this.date.getDate() && tomorrow.getMonth() === this.date.getMonth();
+        return tomorrow.getFullYear() === this.date.getFullYear() &&
+            tomorrow.getDate() === this.date.getDate() &&
+            tomorrow.getMonth() === this.date.getMonth();
     };
     Birthday.prototype.toAgeString = function () {
         return this.age.toString().split('').reverse().map(function (number, index) {
@@ -129,7 +133,9 @@ var Earth = (function (_super) {
         birthday.setTime(date.getTime());
         birthday.setFullYear(date.getFullYear() + age);
         var now = new Date();
-        if (now.getFullYear() !== birthday.getFullYear() || now.getDate() !== birthday.getDate() || now.getMonth() !== birthday.getMonth()) {
+        if (now.getFullYear() !== birthday.getFullYear() ||
+            now.getDate() !== birthday.getDate() ||
+            now.getMonth() !== birthday.getMonth()) {
             birthday.setFullYear(birthday.getFullYear() + 1);
             age++;
         }
@@ -141,12 +147,32 @@ var planets = [];
 planets.push(new Planet('Mercury', 87.9691));
 planets.push(new Planet('Venus', 224.701));
 planets.push(new Earth());
-planets.push(new Planet('Mars', 686.971).addMoon('Phobos', 0.31891023).addMoon('Deimos', 1.263));
-planets.push(new Planet('Jupiter', 4332.59).addMoon('Io', 1.7691).addMoon('Europa', 3.5512).addMoon('Ganymede', 7.1546).addMoon('Callisto', 16.689));
-planets.push(new Planet('Saturn', 10759.22).addMoon('Mimas', 0.942).addMoon('Enceladus', 1.370218).addMoon('Tethys', 1.887802).addMoon('Dione', 2.736915).addMoon('Rhea', 4.518212).addMoon('Titan', 15.945).addMoon('Iapetus', 79.3215));
-planets.push(new Planet('Uranus', 30687.15).addMoon('Miranda', 1.413479).addMoon('Ariel', 2.52).addMoon('Umbriel', 4.144).addMoon('Titania', 8.706234).addMoon('Oberon', 13.463234));
-planets.push(new Planet('Neptune', 60190.03).addMoon('Triton', 5.876854));
-planets.push(new Planet('Pluto', 90465).addMoon('Charon', 6.3872304));
+planets.push(new Planet('Mars', 686.971)
+    .addMoon('Phobos', 0.31891023)
+    .addMoon('Deimos', 1.263));
+planets.push(new Planet('Jupiter', 4332.59)
+    .addMoon('Io', 1.7691)
+    .addMoon('Europa', 3.5512)
+    .addMoon('Ganymede', 7.1546)
+    .addMoon('Callisto', 16.689));
+planets.push(new Planet('Saturn', 10759.22)
+    .addMoon('Mimas', 0.942)
+    .addMoon('Enceladus', 1.370218)
+    .addMoon('Tethys', 1.887802)
+    .addMoon('Dione', 2.736915)
+    .addMoon('Rhea', 4.518212)
+    .addMoon('Titan', 15.945)
+    .addMoon('Iapetus', 79.3215));
+planets.push(new Planet('Uranus', 30687.15)
+    .addMoon('Miranda', 1.413479)
+    .addMoon('Ariel', 2.52)
+    .addMoon('Umbriel', 4.144)
+    .addMoon('Titania', 8.706234)
+    .addMoon('Oberon', 13.463234));
+planets.push(new Planet('Neptune', 60190.03)
+    .addMoon('Triton', 5.876854));
+planets.push(new Planet('Pluto', 90465)
+    .addMoon('Charon', 6.3872304));
 var $;
 function setInitialDate() {
     var initialDate = new Date();
@@ -274,9 +300,9 @@ function updateAvailableDays() {
                     $('.js-select-day').val(28);
             }
             break;
-        case 3:
-        case 5:
-        case 8:
+        case 3: // April
+        case 5: // June
+        case 8: // September
         case 10:
             $('.js-day-31').prop('disabled', true);
             if (day > 30)
@@ -284,10 +310,15 @@ function updateAvailableDays() {
             break;
     }
 }
-$(function () {
+function setBirthdayFromHash() {
     setInitialDate();
     updateAvailableDays();
     updateBirthdays();
+}
+$(function () {
+    setBirthdayFromHash();
+    // Enable back/forward navigation by listening to hash changes on the window.
+    $(window).on('hashchange', setBirthdayFromHash);
     $('select').on('change', function () {
         updateAvailableDays();
         updateLocationHash();
