@@ -350,6 +350,9 @@ $(function() {
   updateAvailableDays();
   updateBirthdays();
 
+  // Enable back/forward navigation by listening to hash changes on the window.
+  $(window).on('hashchange', setInitialDate);
+
   $('select').on('change', function() {
     updateAvailableDays();
     updateLocationHash();
