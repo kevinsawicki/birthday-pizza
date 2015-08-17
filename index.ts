@@ -351,9 +351,7 @@ function setBirthdayFromHash() {
   updateBirthdays();
 }
 
-$(function() {
-  setBirthdayFromHash();
-
+function handleEvents() {
   // Enable back/forward navigation by listening to hash changes on the window.
   $(window).on('hashchange', setBirthdayFromHash);
 
@@ -362,4 +360,9 @@ $(function() {
     updateLocationHash();
     updateBirthdays();
   });
+}
+
+$(function() {
+  setBirthdayFromHash();
+  handleEvents();
 });
