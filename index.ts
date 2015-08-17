@@ -345,10 +345,17 @@ function updateAvailableDays(): void {
   }
 }
 
-$(function() {
+function setBirthdayFromHash() {
   setInitialDate();
   updateAvailableDays();
   updateBirthdays();
+}
+
+$(function() {
+  setBirthdayFromHash();
+
+  // Enable back/forward navigation by listening to hash changes on the window.
+  $(window).on('hashchange', setBirthdayFromHash);
 
   $('select').on('change', function() {
     updateAvailableDays();
