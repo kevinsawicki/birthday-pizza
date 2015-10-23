@@ -82,13 +82,13 @@ a, a:hover, a:focus {
   box-shadow: none;
 }
 
-.planet, .moon {
+.planet, .moon, .asteroid {
   min-height: 100px;
   margin-bottom: 40px;
   padding: 5px;
 }
 
-.planet-image, .moon-image {
+.planet-image, .moon-image, .asteroid-image {
   float: left;
   height: 100px;
   width: 100px;
@@ -96,7 +96,7 @@ a, a:hover, a:focus {
   margin-right: 10px;
 }
 
-.planet .planet-name, .moon .moon-name {
+.planet .planet-name, .moon .moon-name, .asteroid .asteroid-name {
   font-size: 16px;
 }
 
@@ -230,4 +230,12 @@ a, a:hover, a:focus {
 
 .charon .moon-image {
   background-image: url("./images/charon.png");
+}
+
+.ceres .asteroid-image {
+  background-image: url("./images/ceres.jpg");
+}
+
+.vesta .asteroid-image {
+  background-image: url("./images/vesta.jpg");
 }

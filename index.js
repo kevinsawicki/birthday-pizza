@@ -1,8 +1,7 @@
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Orbiter = (function () {
     function Orbiter(name, period) {
@@ -173,6 +172,9 @@ planets.push(new Planet('Neptune', 60190.03)
     .addMoon('Triton', 5.876854));
 planets.push(new Planet('Pluto', 90465)
     .addMoon('Charon', 6.3872304));
+planets.push(new Planet('Ceres', 1681.63));
+planets.push(new Planet('Vesta', 1325.75));
+
 var $;
 function setInitialDate() {
     var initialDate = new Date();
