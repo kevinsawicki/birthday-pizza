@@ -1,16 +1,23 @@
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Orbiter = (function () {
     function Orbiter(name, period) {
         this.name = name;
         this.period = period * 24 * 60 * 60 * 1000;
     }
+    Orbiter.prototype.getStartOfDay = function () {
+        var today = new Date();
+        today.setHours(0);
+        today.setMinutes(0);
+        today.setSeconds(0);
+        today.setMilliseconds(0);
+        return today.getTime();
+    };
     Orbiter.prototype.getAge = function (date) {
-        var time = Date.now() - date.getTime();
+        var time = this.getStartOfDay() - date.getTime();
         return Math.floor(time / this.period);
     };
     Orbiter.prototype.getNextBirthday = function (date) {

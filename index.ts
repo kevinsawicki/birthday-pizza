@@ -7,8 +7,17 @@ class Orbiter {
     this.period = period * 24 * 60 * 60 * 1000
   }
 
+  getStartOfDay(): number {
+    var today = new Date()
+    today.setHours(0)
+    today.setMinutes(0)
+    today.setSeconds(0)
+    today.setMilliseconds(0)
+    return today.getTime()
+  }
+
   getAge(date: Date): number {
-    var time = Date.now() - date.getTime()
+    var time = this.getStartOfDay() - date.getTime()
     return Math.floor(time / this.period)
   }
 
