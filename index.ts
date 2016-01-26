@@ -330,7 +330,7 @@ function updateAvailableDays(): void {
   var day   = parseInt($('.js-select-day').val())
   var month = parseInt($('.js-select-month').val())
   var year  = parseInt($('.js-select-year').val())
-  var leap  = year % 4 === 0
+  var leap  = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
 
   $('.js-day').prop('disabled', false)
 
