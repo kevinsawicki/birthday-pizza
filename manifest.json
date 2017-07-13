@@ -7,12 +7,12 @@
   "display": "fullscreen",
   "icons": [
     {
-      "src": "launcher-icon-192.png",
+      "src": "images/launcher-icon-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "launcher-icon-512.png",
+      "src": "images/launcher-icon-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
