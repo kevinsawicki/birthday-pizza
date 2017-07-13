@@ -4,10 +4,13 @@
     <meta charset="utf-8">
     <meta name="description" content="Your birthday on other planets and moons">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000">
 
     <title>birthday.pizza</title>
 
     <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Audiowide|Quicksand" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -65,7 +68,7 @@
       <div class="row">
 
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 form-group">
-            <select class="form-control accent-font js-select-month">
+            <select class="form-control accent-font js-select-month" aria-label="Select Birthday Month">
               <option value="0">January</option>
               <option value="1">February</option>
               <option value="2">March</option>
@@ -82,7 +85,7 @@
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 form-group">
-          <select class="form-control accent-font js-select-day">
+          <select class="form-control accent-font js-select-day" aria-label="Select Birthday Day">
             <option class="js-day" value="1">1st</option>
             <option class="js-day" value="2">2nd</option>
             <option class="js-day" value="3">3rd</option>
@@ -118,7 +121,7 @@
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 form-group">
-          <select class="form-control accent-font js-select-year">
+          <select class="form-control accent-font js-select-year" aria-label="Select Birhtday Year">
             <option value="1900">1900</option>
             <option value="1901">1901</option>
             <option value="1902">1902</option>

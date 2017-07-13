@@ -5,6 +5,7 @@ self.addEventListener('install', function (event) {
       '/index.html',
       '/index.js',
       '/styles.css',
+      '/manifest.json',
       '/images/ariel.jpg',
       '/images/callisto.jpg',
       '/images/charon.png',
