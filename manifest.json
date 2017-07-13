@@ -4,7 +4,7 @@
   "start_url": "index.html",
   "background_color": "#000",
   "theme_color": "#000",
-  "display": "fullscreen",
+  "display": "standalone",
   "icons": [
     {
       "src": "images/launcher-icon-48.png",
