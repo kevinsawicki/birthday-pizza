@@ -26,7 +26,7 @@ var Orbiter = (function () {
         return new Birthday(this, new Date(date.getTime() + birthday), age);
     };
     return Orbiter;
-})();
+}());
 var Birthday = (function () {
     function Birthday(location, date, age) {
         this.location = location;
@@ -97,7 +97,7 @@ var Birthday = (function () {
         return month + ' ' + this.date.getDate() + ', ' + this.date.getFullYear();
     };
     return Birthday;
-})();
+}());
 var Planet = (function (_super) {
     __extends(Planet, _super);
     function Planet(name, period) {
@@ -109,7 +109,7 @@ var Planet = (function (_super) {
         return this;
     };
     return Planet;
-})(Orbiter);
+}(Orbiter));
 var Moon = (function (_super) {
     __extends(Moon, _super);
     function Moon(name, period, planet) {
@@ -117,7 +117,7 @@ var Moon = (function (_super) {
         this.planet = planet;
     }
     return Moon;
-})(Orbiter);
+}(Orbiter));
 var Earth = (function (_super) {
     __extends(Earth, _super);
     function Earth() {
@@ -149,7 +149,7 @@ var Earth = (function (_super) {
         return new Birthday(this, birthday, age);
     };
     return Earth;
-})(Planet);
+}(Planet));
 var planets = [];
 planets.push(new Planet('Mercury', 87.9691));
 planets.push(new Planet('Venus', 224.701));
@@ -330,6 +330,9 @@ function handleEvents() {
         updateLocationHash();
         updateBirthdays();
     });
+}
+if (navigator.serviceWorker != null) {
+    navigator.serviceWorker.register('/service-worker.js');
 }
 $(function () {
     setBirthdayFromHash();

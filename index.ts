@@ -371,6 +371,10 @@ function handleEvents() {
   })
 }
 
+if((<any>navigator).serviceWorker != null) {
+  (<any>navigator).serviceWorker.register('/service-worker.js')
+}
+
 $(function() {
   setBirthdayFromHash()
   handleEvents()
