@@ -1,4 +1,4 @@
-# :Birthday: :pizza: Birthday.pizza :
+# :Birthday: :pizza: Birthday.pizza : :Birthday: :pizza:
 
 [![Build Status](https://travis-ci.org/kevinsawicki/birthday-pizza.svg)](https://travis-ci.org/kevinsawicki/birthday-pizza)
 
