@@ -181,6 +181,13 @@ planets.push(new Planet('Neptune', 60190.03)
 planets.push(new Planet('Pluto', 90465)
     .addMoon('Charon', 6.3872304));
 var $;
+function extendYears() {
+    var today = new Date();
+    var years = $('.js-select-year')
+    for (var y = $('.js-select-year option:last-child').val(); y <= today.getFullYear(); y++) {
+        years.append('<option value="' + y + '">' + y + '</option>')
+    }
+}
 function setInitialDate() {
     var initialDate = new Date();
     initialDate.setFullYear(initialDate.getFullYear() - 18);
@@ -318,6 +325,7 @@ function updateAvailableDays() {
     }
 }
 function setBirthdayFromHash() {
+    extendYears()
     setInitialDate();
     updateAvailableDays();
     updateBirthdays();
